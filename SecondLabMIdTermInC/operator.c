@@ -4,6 +4,7 @@ int main(){
     scanf("%d",&n);
     if(n%2==0){
  printf("%d",n/3 );
+ 
     }else{
          printf("%d",-1 );
     }
