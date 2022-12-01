@@ -1,14 +1,21 @@
 #include<stdio.h>
 int main(){
-    int t;
+      int t;
     scanf("%d",&t);
-    for(int i=0; i<t; i++){
+    for(int j=0; j<t; j++){
         int n;
         scanf("%d",&n);
-        int arr[n];
-        for(int j=0; j<n; j++){
-            scanf("%d",arr[n]) 
+        char arr[n];
+        int counter=0;
+        scanf("%s",&arr);
+        for(int i=0; i<n; i++){
+            if(arr[i]=='1'&&arr[i+1]=='0')
+              counter++;
+        else if(arr[i]=='0'&&arr[i+1]=='1')
+                counter++;   
         }
+        printf("out%d\n",counter);
     }
     return 0;
+
 }

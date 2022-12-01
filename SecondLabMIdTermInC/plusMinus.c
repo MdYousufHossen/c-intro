@@ -1,24 +1,22 @@
 #include<stdio.h>
 int main(){
-    int n,counter,max=0;
+    int n,counter=1,max=0;
     scanf("%d\n",&n);
-    char sings[n+1];
+    char sings[n];
     fgets(sings, sizeof(sings),stdin);
-     for(int i=0; i<(n+1); i++){
-        printf("%c",sings[i]);
-     }
-     for(int i=0; i<n; i++){
-     if(sings[i]==sings[i-1]){
+     for(int i=0; i<(n-1); i++){
+     if(sings[i]==sings[i+1]){
       counter++;
-     if(counter>max){
+     }else {
+        if(counter>max){
          max=counter;
-     }
-     }
-     else{
+            }
         counter=1;
      }
     }
-    printf("%d",max);
+    if(counter>max)
+    max=counter;
+    printf("%d\n",max);
 
     return 0;
 }
